@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>¡Ganaste!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h2>🎉 ¡Felicidades {{ name }}!</h2>
+        <p>Adivinaste el número en <strong>{{ attempts }}</strong> intentos.</p>
+        <a href="{{ url_for('leaderboard') }}" class="btn">Ver ranking</a>
+        <a href="{{ url_for('index') }}" class="btn">Jugar otra vez</a>
+    </div>
+</body>
+</html>

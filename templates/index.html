@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Adivina el número</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h2>🎯 Adivina el número (1 al 20)</h2>
+
+        {% if name %}
+        <p><strong>Jugador:</strong> {{ name }}</p>
+        {% endif %}
+
+        {% if message %}
+        <p class="hint">{{ message }}</p>
+        {% endif %}
+
+        <form method="post">
+            {% if not name %}
+            <input type="text" name="name" placeholder="Tu nombre" required>
+            {% else %}
+            <input type="hidden" name="name" value="{{ name }}">
+            {% endif %}
+
+            <input type="number" name="guess" placeholder="ingresa un numero" required min="1" max="20">
+            <input type="hidden" name="secret" value="{{ secret }}">
+            <input type="hidden" name="attempts" value="{{ attempts }}">
+            <button type="submit">Probar suerte</button>
+        </form>
+    </div>
+</body>
+</html>

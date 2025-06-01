@@ -1,0 +1,32 @@
+/*  Fuente y fondo */
+body{
+  margin:0; font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#4facfe,#00f2fe);
+  display:flex; justify-content:center; align-items:center;
+  min-height:100vh; color:#333;
+}
+
+/*  Tarjeta central */
+.card{
+  background:#fff; padding:30px 40px; border-radius:18px;
+  box-shadow:0 6px 18px rgba(0,0,0,.15); text-align:center;
+  width:320px;
+}
+
+/*  Inputs & botón */
+input,button{
+  width:100%; padding:12px; margin:10px 0;
+  border:2px solid #4facfe; border-radius:10px; font-size:1em;
+}
+button{ cursor:pointer; background:#4facfe; color:#fff; border:none; }
+button:hover{ background:#3c8dff; }
+
+/*  Tabla ranking */
+table{ width:100%; border-collapse:collapse; margin-top:10px; }
+th,td{ padding:8px; border-bottom:1px solid #ddd; }
+th{ background:#f6f8ff; }
+
+/*  Mensaje pista */
+.hint{ font-weight:bold; color:#f44336; margin-bottom:5px; }
+.btn{ display:inline-block; margin-top:15px; color:#4facfe; }
+.player{ margin:6px 0 0 0; }
