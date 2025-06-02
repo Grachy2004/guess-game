@@ -1,17 +1,17 @@
-# Usa una imagen oficial de Python
-FROM python:3.10-slim
+# Imagen base
+FROM python:3.10
 
-# Establece el directorio de trabajo
+# Directorio de trabajo
 WORKDIR /app
 
-# Copia los archivos al contenedor
+# Copia los archivos
 COPY . .
 
 # Instala dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expón el puerto que Gunicorn usará
+# Expone el puerto
 EXPOSE 8080
 
-# Usa Gunicorn para correr la app
-CMD ["gunicorn", "-b", "0.0.0.0:8080", "guess_game:app"]
+# Comando para correr la app
+CMD ["python", "guess_game.py"]
