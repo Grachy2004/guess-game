@@ -11,7 +11,8 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expone el puerto
-EXPOSE 8080
+EXPOSE 80
 
 # Comando para correr la app
-CMD ["python", "guess_game.py"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:80", "guess_game:app"]
+
